@@ -1,0 +1,304 @@
+/* 
+ * Via Medicamentos - Premium CSS stylesheet
+ * Designed for visual excellence, modern micro-interactions, and premium layouts.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --primary: #EC1C24;
+    --primary-light: #FF3C45;
+    --primary-dark: #A70C12;
+    --primary-rgb: 236, 28, 36;
+    
+    /* Theme Neutrals */
+    --bg-light: #FAFAFC;
+    --bg-dark: #0A0A0B;
+    --surface-light: #FFFFFF;
+    --surface-dark: #121214;
+    --border-light: rgba(0, 0, 0, 0.05);
+    --border-dark: rgba(255, 255, 255, 0.06);
+    
+    --font-heading: 'Poppins', 'Inter', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-light);
+    color: #1A1A1F;
+    font-family: var(--font-body);
+}
+
+body {
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #F3F4F6;
+}
+::-webkit-scrollbar-thumb {
+    background: #D1D5DB;
+    border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
+
+/* Background Watermarks & Orbs */
+.bg-watermark {
+    position: fixed;
+    bottom: -5%;
+    right: -5%;
+    width: 45vw;
+    max-width: 500px;
+    opacity: 0.015;
+    z-index: 0;
+    pointer-events: none;
+    filter: grayscale(100%);
+}
+
+.glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.12;
+    z-index: 0;
+    pointer-events: none;
+    animation: pulseOrb 12s infinite alternate ease-in-out;
+}
+
+.orb-primary {
+    background-color: var(--primary);
+    width: 400px;
+    height: 400px;
+}
+
+.orb-secondary {
+    background-color: #FF8F94;
+    width: 300px;
+    height: 300px;
+}
+
+@keyframes pulseOrb {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.1;
+    }
+    100% {
+        transform: translate(40px, 30px) scale(1.15);
+        opacity: 0.16;
+    }
+}
+
+/* Typography Custom Utilities */
+.font-headline {
+    font-family: var(--font-heading);
+}
+
+.text-red-gradient {
+    color: var(--primary);
+}
+
+.text-dark-gradient {
+    color: #1A1A1F;
+}
+
+/* Premium Glass Cards */
+.glass-card {
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+
+.glass-card-dark {
+    background: rgba(18, 18, 20, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Hover-Tilt Effect for Cards */
+.hover-premium {
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-premium:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(var(--primary-rgb), 0.08);
+    border-color: rgba(var(--primary-rgb), 0.2);
+}
+
+/* Bento Grid */
+.bento-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 2rem;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bento-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(var(--primary-rgb), 0.04) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.bento-card:hover::before {
+    opacity: 1;
+}
+
+/* Floating Animation */
+.floating-element {
+    animation: float 6s ease-in-out infinite;
+}
+
+.floating-delayed {
+    animation: float 6s ease-in-out infinite;
+    animation-delay: 2s;
+}
+
+.floating-delayed-2 {
+    animation: float 6s ease-in-out infinite;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-15px) rotate(2deg);
+    }
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+/* Custom Navigation Indicator */
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Premium Inputs */
+.premium-input {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    border-radius: 0.75rem;
+}
+
+.premium-input:focus {
+    background: #FFFFFF;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(var(--primary-rgb), 0.1);
+    outline: none;
+}
+
+/* Interactive Bullet List */
+.bullet-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: rgba(var(--primary-rgb), 0.1);
+    color: var(--primary);
+    font-size: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.bullet-item:hover .bullet-icon {
+    background-color: var(--primary);
+    color: white;
+    transform: scale(1.1) rotate(360deg);
+}
+
+/* Custom Buttons */
+.btn-primary-premium {
+    background-color: var(--primary);
+    color: white;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 20px rgba(var(--primary-rgb), 0.15);
+}
+
+.btn-primary-premium:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(var(--primary-rgb), 0.25);
+    background-color: var(--primary-dark);
+}
+
+/* Timeline Custom Track (kept for legacy support if needed) */
+.timeline-track::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: linear-gradient(180deg, var(--primary) 0%, rgba(var(--primary-rgb), 0.1) 100%);
+    transform: translateX(-50%);
+}
+
+@media (max-width: 768px) {
+    .timeline-track::before {
+        left: 20px;
+    }
+}
+
+/* Floating WhatsApp custom styling */
+#whatsapp-floating {
+    box-shadow: 0 8px 30px rgba(16, 185, 129, 0.4);
+}
+
+/* Select option styles override */
+select option {
+    background-color: #FFFFFF;
+    color: #1F2937;
+}
+
+/* Brand badges hover micro-interactions */
+.gsap-brand-badge {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: default;
+}
+.gsap-brand-badge:hover {
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 10px 25px rgba(236, 28, 36, 0.08);
+}
