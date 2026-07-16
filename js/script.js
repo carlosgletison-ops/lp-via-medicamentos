@@ -87,15 +87,30 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        // Brand Badges Entrance Animation
-        gsap.fromTo(".gsap-brand-badge", 
-            { opacity: 0, y: 20 },
+        // Product Category Cards Entrance Animation
+        gsap.fromTo(".product-category-card",
+            { opacity: 0, y: 30 },
             {
                 opacity: 1,
                 y: 0,
-                duration: 0.6,
-                stagger: 0.05,
+                duration: 0.8,
+                stagger: 0.1,
                 ease: "power2.out",
+                scrollTrigger: {
+                    trigger: "#produtos",
+                    start: "top 80%"
+                }
+            }
+        );
+
+        // Brand Slider Entrance Animation
+        gsap.fromTo(".slider-wrapper", 
+            { opacity: 0, y: 30 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                ease: "power3.out",
                 scrollTrigger: {
                     trigger: "#marcas",
                     start: "top 85%"
@@ -128,17 +143,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 duration: 1,
                 ease: "power3.out",
                 scrollTrigger: {
-                    trigger: "#closing-cta",
+                    trigger: "#lead-capture",
                     start: "top 80%"
                 }
             }
         );
     }
 
-    // 4. Scroll To Form button functionality
-    const scrollToFormBtn = document.getElementById("scroll-to-form-btn");
-    if (scrollToFormBtn) {
-        scrollToFormBtn.addEventListener("click", () => {
+    // 4. Scroll To Form functionality for all anchor links
+    const leadCaptureLinks = document.querySelectorAll('a[href="#lead-capture"]');
+    leadCaptureLinks.forEach(link => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
             const formSection = document.getElementById("lead-capture");
             if (formSection) {
                 formSection.scrollIntoView({ behavior: "smooth" });
@@ -148,7 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
         });
-    }
+    });
 
     // 5. Input Masking (CNPJ and Phone)
     const cnpjInput = document.getElementById("lead-cnpj");

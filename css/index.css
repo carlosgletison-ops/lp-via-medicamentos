@@ -294,11 +294,67 @@ select option {
 }
 
 /* Brand badges hover micro-interactions */
-.gsap-brand-badge {
+.brand-slide {
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     cursor: default;
 }
-.gsap-brand-badge:hover {
-    transform: scale(1.05) translateY(-3px);
-    box-shadow: 0 10px 25px rgba(236, 28, 36, 0.08);
+
+/* Brand Infinite Carrossel styles */
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent, white 15%, white 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, white 15%, white 85%, transparent);
 }
+
+.slider-track {
+    display: flex;
+    gap: 1.5rem;
+    animation: scroll-infinite 35s linear infinite;
+}
+
+.brand-slide {
+    flex-shrink: 0;
+    filter: grayscale(100%);
+    opacity: 0.55;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    user-select: none;
+}
+
+.brand-slide:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.05) translateY(-2px);
+    border-color: rgba(236, 28, 36, 0.2);
+    color: var(--primary);
+}
+
+/* Pause scroll animation on hover */
+.slider-wrapper:hover .slider-track {
+    animation-play-state: paused;
+}
+
+@keyframes scroll-infinite {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Category cards premium hover shadow and transitions */
+.product-category-card {
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.product-category-card:hover {
+    box-shadow: 0 20px 40px rgba(236, 28, 36, 0.15);
+}
+.product-category-card .fa-solid {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.product-category-card:hover .fa-solid {
+    transform: scale(1.15) rotate(5deg);
+}
+
