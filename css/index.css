@@ -358,3 +358,89 @@ select option {
     transform: scale(1.15) rotate(5deg);
 }
 
+/* FAQ Accordion Styling */
+.faq-item {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.faq-question {
+    width: 100%;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #1A1A1F;
+    background: white;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.faq-question:hover {
+    color: var(--primary);
+    background: rgba(236, 28, 36, 0.02);
+}
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    background: white;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+.faq-answer-inner {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    color: #4B5563;
+    font-size: 0.925rem;
+    line-height: 1.6;
+    font-weight: 300;
+}
+.faq-arrow {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.faq-item.active .faq-arrow {
+    transform: rotate(180deg);
+}
+.faq-item.active .faq-question {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    color: var(--primary);
+}
+
+/* Timeline / Passo a Passo Custom Design */
+.step-number {
+    position: relative;
+    z-index: 10;
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 1.25rem;
+    box-shadow: 0 0 0 8px rgba(236, 28, 36, 0.1);
+}
+.step-card {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.03);
+    border-color: rgba(236, 28, 36, 0.15);
+}
+
+/* Testimonials Layout adjustments */
+.testimonial-card {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+}
+

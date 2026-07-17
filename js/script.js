@@ -74,18 +74,21 @@ document.addEventListener("DOMContentLoaded", () => {
             );
         });
 
-        // Bento Grid Card Animations (Público-alvo / Dores)
-        gsap.to(".gsap-bento-card", {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            stagger: 0.15,
-            ease: "power3.out",
-            scrollTrigger: {
-                trigger: "#dores-publico",
-                start: "top 80%"
+        // Sobre Nós Column Cards Animation
+        gsap.fromTo("#sobre .hover-premium", 
+            { opacity: 0, y: 30 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                stagger: 0.15,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: "#sobre",
+                    start: "top 80%"
+                }
             }
-        });
+        );
 
         // Product Category Cards Entrance Animation
         gsap.fromTo(".product-category-card",
@@ -118,8 +121,8 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         );
 
-        // Differential Cards Animation
-        gsap.fromTo(".gsap-diff-card", 
+        // Timeline Step Cards Animation
+        gsap.fromTo(".step-card", 
             { opacity: 0, y: 40 },
             {
                 opacity: 1,
@@ -128,7 +131,23 @@ document.addEventListener("DOMContentLoaded", () => {
                 stagger: 0.15,
                 ease: "back.out(1.2)",
                 scrollTrigger: {
-                    trigger: ".diff-grid-container",
+                    trigger: "#fluxo",
+                    start: "top 80%"
+                }
+            }
+        );
+
+        // Testimonial Cards Animation
+        gsap.fromTo(".testimonial-card", 
+            { opacity: 0, y: 30 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                stagger: 0.15,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: "#depoimentos",
                     start: "top 80%"
                 }
             }
@@ -274,4 +293,31 @@ document.addEventListener("DOMContentLoaded", () => {
             successModal.classList.remove("flex");
         });
     }
+
+    // FAQ Accordion Toggle Behavior
+    const faqItems = document.querySelectorAll(".faq-item");
+    faqItems.forEach(item => {
+        const questionBtn = item.querySelector(".faq-question");
+        const answerDiv = item.querySelector(".faq-answer");
+        
+        if (questionBtn && answerDiv) {
+            questionBtn.addEventListener("click", () => {
+                // Close other active FAQ items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains("active")) {
+                        otherItem.classList.remove("active");
+                        otherItem.querySelector(".faq-answer").style.maxHeight = null;
+                    }
+                });
+                
+                // Toggle current FAQ item
+                item.classList.toggle("active");
+                if (item.classList.contains("active")) {
+                    answerDiv.style.maxHeight = answerDiv.scrollHeight + "px";
+                } else {
+                    answerDiv.style.maxHeight = null;
+                }
+            });
+        }
+    });
 });
