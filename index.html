@@ -296,7 +296,7 @@
         <div class="max-w-6xl mx-auto relative z-10 flex flex-col md:flex-row items-center gap-12">
             <!-- Left Content: Image/Visual element -->
             <div class="w-full md:w-2/5 flex justify-center">
-                <img src="assets/manifesto_illustration_transparent.png" alt="Segurança e Procedência Via Medicamentos" class="w-full max-w-[360px] h-auto object-contain">
+                <img src="assets/manifesto_illustration_transparent.png?v=1.3" alt="Segurança e Procedência Via Medicamentos" class="w-full max-w-[420px] h-auto object-contain transition-transform duration-300 hover:scale-105">
             </div>
 
             <!-- Right Content: Copy -->
@@ -555,72 +555,78 @@
             <div class="text-center mt-12">
                 <a href="#lead-capture" class="btn-primary-premium inline-flex items-center justify-center px-8 py-4 rounded-full font-bold transition-all duration-300 text-sm tracking-wide shadow-md">
                     <span>VER PORTFÓLIO COMPLETO</span>
-         <!-- DOBRA 6: FLUXO DE COMPRA PASSO A PASSO -->
+                    <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- DOBRA 6: FLUXO DE COMPRA PASSO A PASSO -->
     <section id="fluxo" class="relative py-24 bg-gray-50 px-6 md:px-12 z-10 border-t border-gray-100">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16 max-w-3xl mx-auto">
-                <span class="text-primary text-sm font-bold uppercase tracking-[0.2em] block mb-3">Como Comprar</span>
-                <h2 class="gsap-section-title text-3xl md:text-4xl font-black font-headline text-gray-900 leading-tight">
+                <span class="bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full inline-block mb-4">Tutorial</span>
+                <h2 class="gsap-section-title text-3xl md:text-4.5xl font-black font-headline text-gray-900 leading-tight">
                     Como comprar com a gente?
                 </h2>
-                <p class="text-gray-500 text-sm md:text-base font-light mt-4">
-                    Passo a passo descomplicado para você abastecer seu estoque com economia e rapidez.
-                </p>
             </div>
 
-            <!-- Steps Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
-                <!-- Step 1 -->
-                <div class="step-card bg-white rounded-3xl p-8 shadow-sm flex flex-col justify-between items-start relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-bl-[4rem] -z-10 group-hover:bg-primary/10 transition-colors duration-300"></div>
-                    <div class="space-y-4 pt-4">
-                        <span class="step-number">01</span>
-                        <h3 class="text-lg font-bold font-headline text-gray-950 mt-4">Cadastro Comercial</h3>
-                        <p class="text-gray-500 font-light text-xs md:text-sm leading-relaxed">
-                            Faça seu cadastro comercial de forma simples e segura informando seus dados B2B.
+            <!-- Timeline Container -->
+            <div class="relative max-w-5xl mx-auto">
+                <!-- Horizontal Connector Line (hidden on mobile, visible on desktop) -->
+                <div class="absolute top-[32px] left-[12%] right-[12%] h-[3px] bg-primary hidden md:block z-0"></div>
+
+                <!-- Steps Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-4 relative z-10">
+                    <!-- Step 1 -->
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center text-xl shadow-md border-4 border-white transition-all duration-300 hover:scale-110 mb-6 relative">
+                            <i class="fa-solid fa-user-pen"></i>
+                        </div>
+                        <h3 class="text-lg font-bold font-headline text-gray-900 mb-2">1. Faça seu cadastro</h3>
+                        <p class="text-gray-500 font-light text-xs md:text-sm leading-relaxed max-w-[200px]">
+                            Informe seus dados de CNPJ de saúde de forma simples e segura.
                         </p>
                     </div>
-                </div>
 
-                <!-- Step 2 -->
-                <div class="step-card bg-white rounded-3xl p-8 shadow-sm flex flex-col justify-between items-start relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-bl-[4rem] -z-10 group-hover:bg-primary/10 transition-colors duration-300"></div>
-                    <div class="space-y-4 pt-4">
-                        <span class="step-number">02</span>
-                        <h3 class="text-lg font-bold font-headline text-gray-950 mt-4">Envio da Lista</h3>
-                        <p class="text-gray-500 font-light text-xs md:text-sm leading-relaxed">
-                            Envie sua lista de cotação ou fale diretamente com um especialista da sua região.
+                    <!-- Step 2 -->
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center text-xl shadow-md border-4 border-white transition-all duration-300 hover:scale-110 mb-6 relative">
+                            <i class="fa-solid fa-file-arrow-up"></i>
+                        </div>
+                        <h3 class="text-lg font-bold font-headline text-gray-900 mb-2">2. Envie a sua cotação</h3>
+                        <p class="text-gray-500 font-light text-xs md:text-sm leading-relaxed max-w-[200px]">
+                            Envie sua lista de produtos ou fale direto com o especialista da sua região.
                         </p>
                     </div>
-                </div>
 
-                <!-- Step 3 -->
-                <div class="step-card bg-white rounded-3xl p-8 shadow-sm flex flex-col justify-between items-start relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-bl-[4rem] -z-10 group-hover:bg-primary/10 transition-colors duration-300"></div>
-                    <div class="space-y-4 pt-4">
-                        <span class="step-number">03</span>
-                        <h3 class="text-lg font-bold font-headline text-gray-950 mt-4">Cotação & Condições</h3>
-                        <p class="text-gray-500 font-light text-xs md:text-sm leading-relaxed">
-                            Monte seu pedido com flexibilidade e aproveite o parcelamento em até 6x sem juros.
+                    <!-- Step 3 -->
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center text-xl shadow-md border-4 border-white transition-all duration-300 hover:scale-110 mb-6 relative">
+                            <i class="fa-solid fa-box-open"></i>
+                        </div>
+                        <h3 class="text-lg font-bold font-headline text-gray-900 mb-2">3. Monte seu pedido</h3>
+                        <p class="text-gray-500 font-light text-xs md:text-sm leading-relaxed max-w-[200px]">
+                            Aproveite as melhores marcas e parcele em até 6x sem juros no boleto.
                         </p>
                     </div>
-                </div>
 
-                <!-- Step 4 -->
-                <div class="step-card bg-white rounded-3xl p-8 shadow-sm flex flex-col justify-between items-start relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-bl-[4rem] -z-10 group-hover:bg-primary/10 transition-colors duration-300"></div>
-                    <div class="space-y-4 pt-4">
-                        <span class="step-number">04</span>
-                        <h3 class="text-lg font-bold font-headline text-gray-950 mt-4">Recebimento Ágil</h3>
-                        <p class="text-gray-500 font-light text-xs md:text-sm leading-relaxed">
-                            Receba com agilidade e total segurança na sua clínica, veterinária ou hospital.
+                    <!-- Step 4 -->
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center text-xl shadow-md border-4 border-white transition-all duration-300 hover:scale-110 mb-6 relative">
+                            <i class="fa-solid fa-truck-fast"></i>
+                        </div>
+                        <h3 class="text-lg font-bold font-headline text-gray-900 mb-2">4. Recebimento ágil</h3>
+                        <p class="text-gray-500 font-light text-xs md:text-sm leading-relaxed max-w-[200px]">
+                            Receba com agilidade, nota fiscal completa e segurança na sua instituição.
                         </p>
                     </div>
                 </div>
             </div>
 
             <!-- CTA Passo a Passo -->
-            <div class="text-center mt-12">
+            <div class="text-center mt-16">
                 <a href="#lead-capture" class="btn-primary-premium inline-flex items-center justify-center px-12 py-5 rounded-full font-bold transition-all duration-300 text-sm tracking-wide shadow-lg">
                     <span>QUERO PARCELAR MEU PEDIDO EM ATÉ 6X</span>
                     <i class="fa-solid fa-credit-card ml-2 text-xs"></i>
