@@ -44,6 +44,20 @@ document.addEventListener("DOMContentLoaded", () => {
     if (typeof gsap !== "undefined") {
         gsap.registerPlugin(ScrollTrigger);
 
+        // Trust Bar Horizontal Scroll Parallax Animation
+        gsap.fromTo(".gsap-trust-bar-track", 
+            { x: 50 }, 
+            {
+                x: -50,
+                scrollTrigger: {
+                    trigger: ".trust-bar-section",
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: 1
+                }
+            }
+        );
+
         // Hero Content entrance
         gsap.to(".gsap-hero", {
             opacity: 1,
