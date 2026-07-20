@@ -262,8 +262,8 @@ document.addEventListener("DOMContentLoaded", () => {
 - **Região / Estado:** ${state}`;
             
             const encodedText = encodeURIComponent(intro + "\n\n" + body);
-            // Official Via Medicamentos contact number: 558896641852
-            const whatsappURL = `https://wa.me/558896641852?text=${encodedText}`;
+            // Official Via Medicamentos contact number: 558821480010
+            const whatsappURL = `https://wa.me/558821480010?text=${encodedText}`;
 
             // Directly redirect lead to WhatsApp immediately
             window.open(whatsappURL, "_blank") || (window.location.href = whatsappURL);
