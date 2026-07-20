@@ -265,37 +265,12 @@ document.addEventListener("DOMContentLoaded", () => {
             // Official Via Medicamentos contact number: 558896641852
             const whatsappURL = `https://wa.me/558896641852?text=${encodedText}`;
 
-            // Show Success Animation / Feedback
-            setTimeout(() => {
-                if (successModal) {
-                    successModal.classList.remove("hidden");
-                    successModal.classList.add("flex");
-                    
-                    // GSAP entrance for modal
-                    gsap.fromTo(successModal.querySelector(".modal-card"),
-                        { scale: 0.7, opacity: 0 },
-                        { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(1.5)" }
-                    );
-
-                    // Reset Form
-                    b2bForm.reset();
-                    formSubmitBtn.disabled = false;
-                    formSubmitBtn.innerHTML = `<span>SOLICITAR COTAÇÃO IMEDIATA</span><i class="fa-solid fa-paper-plane text-xs"></i>`;
-
-                    // Redirect to WhatsApp after 2 seconds
-                    setTimeout(() => {
-                        window.open(whatsappURL, "_blank");
-                        successModal.classList.add("hidden");
-                        successModal.classList.remove("flex");
-                    }, 2200);
-                } else {
-                    // Fallback to immediate redirect
-                    window.open(whatsappURL, "_blank");
-                    b2bForm.reset();
-                    formSubmitBtn.disabled = false;
-                    formSubmitBtn.innerHTML = `<span>SOLICITAR COTAÇÃO IMEDIATA</span><i class="fa-solid fa-paper-plane text-xs"></i>`;
-                }
-            }, 1000);
+            // Directly redirect lead to WhatsApp immediately
+            window.open(whatsappURL, "_blank") || (window.location.href = whatsappURL);
+            
+            b2bForm.reset();
+            formSubmitBtn.disabled = false;
+            formSubmitBtn.innerHTML = `<span>ENVIAR DADOS E SOLICITAR COTAÇÃO</span><i class="fa-solid fa-paper-plane text-xs"></i>`;
         });
     }
 
